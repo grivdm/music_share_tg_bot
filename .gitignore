@@ -1,0 +1,57 @@
+# Ruby specific
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+# Environment & secrets
+.env
+.env.development
+.env.test
+.env.production
+*.key
+
+# Ruby dependency managers
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
+.rvmrc
+.rbenv-version
+.ruby-version
+.ruby-gemset
+
+# Log files
+log/*
+*.log
+
+# Temporary files
+.sass-cache/
+/public/system
+/public/assets
+.byebug_history
+.dat*
+.repl_history
+build/
+*.bridgesupport
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.solargraph.yml
+.solargraph_definitions.rb
+
+# Documentation
+/.yardoc/
+/doc/
+/rdoc/
