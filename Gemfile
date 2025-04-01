@@ -6,6 +6,7 @@ gem 'dotenv'
 gem 'httparty'
 gem 'rake'
 gem 'telegram-bot-ruby'
+gem "kamal"
 
 group :development do
   gem 'solargraph'

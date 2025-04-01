@@ -1,0 +1,43 @@
+<% require 'dotenv'; Dotenv.load('.env') %>
+service: music_share_tg_bot
+image: grivdm/music_share_tg_bot
+
+# Серверы для деплоя
+servers:
+  web:
+    hosts:
+      - <%= ENV['SERVER_IP'] %>
+    proxy: false
+    options:
+      health-cmd: "date"
+
+registry:
+  username: ${DOCKER_USERNAME}
+  password: ${KAMAL_REGISTRY_PASSWORD}
+
+env:
+  secret:
+    - TELEGRAM_BOT_TOKEN
+    - MUSIC_SHARE_API_URL
+  clear:
+    RACK_ENV: production
+
+ssh:
+  user: deploy
+  key_data: [<%= ENV['SSH_PRIVATE_KEY'].inspect %>]
+
+builder:
+  arch: amd64
+
+
+# Для мониторинга и логов
+# healthcheck:
+#   path: /health
+#   interval: 10s
+#   timeout: 5s
+#   retries: 3
+
+aliases:
+  logs: app logs -f
+  ps: app ps
+  status: app status
