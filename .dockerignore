@@ -1,0 +1,9 @@
+.git
+.github
+.env
+test
+doc
+README.md
+TESTING.md
+Rakefile
+*.md
