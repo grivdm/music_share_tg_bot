@@ -1,34 +1,12 @@
 version: 2
 updates:
-  # Поддерживать зависимости для bundler
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    versioning-strategy: auto
-    allow:
-      # Разрешить только обновление патч-версий (для безопасности критических исправлений)
-      - dependency-type: "direct"
-        update-type: "security"
-      - dependency-type: "direct"
-        update-type: "patch"
-    labels:
-      - "dependencies"
-      - "ruby"
-    commit-message:
-      prefix: "deps"
-      include: "scope"
-
-  # Поддерживать зависимости для GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
-      - "github-actions"
-    commit-message:
-      prefix: "ci"
-      include: "scope"
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
