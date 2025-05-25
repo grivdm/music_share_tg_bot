@@ -25,6 +25,8 @@ module Models
         '🟢'
       when 'deezer'
         '🔵'
+      when 'youtube_music'
+        '🔴'
       else
         '🎵'
       end

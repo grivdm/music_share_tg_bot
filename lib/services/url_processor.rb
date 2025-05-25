@@ -6,11 +6,17 @@ module Services
     def extract_url(text)
 
       patterns = [
+        # Spotify URLs
         %r{(https?://)?open\.spotify\.com/track/[a-zA-Z0-9]+},
         %r{(https?://)?spotify\.com/track/[a-zA-Z0-9]+},
+
+        # Deezer URLs
         %r{(https?://)?deezer\.com/\w+/track/\d+},
         %r{(https?://)?deezer\.com/track/\d+},
-        %r{(https?://)?dzr\.page\.link/[a-zA-Z0-9]+}
+        %r{(https?://)?dzr\.page\.link/[a-zA-Z0-9]+},
+
+        # YouTube Music URLs
+        %r{(https?://)?music\.youtube\.com/watch\?v=[a-zA-Z0-9]+},
       ]
 
       patterns.each do |pattern|
