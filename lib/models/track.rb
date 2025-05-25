@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 module Models
   class Track
     attr_reader :title, :artist, :album, :isrc
@@ -17,7 +16,7 @@ module Models
     end
 
     def self.from_json(json_data)
-      return nil unless json_data && json_data.is_a?(Hash)
+      return nil unless json_data.is_a?(Hash)
 
       track = new(json_data)
       track.valid? ? track : nil

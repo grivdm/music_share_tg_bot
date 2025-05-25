@@ -3,7 +3,6 @@
 require_relative 'track'
 require_relative 'links'
 
-
 module Models
   class ConversionResult
     attr_reader :track, :links
@@ -18,7 +17,7 @@ module Models
     end
 
     def self.from_json(json_data)
-      return nil unless json_data && json_data.is_a?(Hash)
+      return nil unless json_data.is_a?(Hash)
 
       track_data = json_data['track']
       links_data = json_data['links']
@@ -31,7 +30,7 @@ module Models
       result = new(track, links)
       result.valid? ? result : nil
     end
-    
+
     def to_markdown
       "#{@track.to_markdown}#{@links.to_markdown}"
     end
