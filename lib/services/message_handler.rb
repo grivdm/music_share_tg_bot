@@ -16,14 +16,14 @@ module Services
     def send_help_message(bot, chat_id)
       bot.api.send_message(
         chat_id: chat_id,
-        text: "Send me a Spotify or Deezer link, and I'll convert it to other music platforms."
+        text: "Send me a Spotify, Youtube Music, or Deezer link, and I'll convert it to other music platforms."
       )
     end
 
     def send_unsupported_message(bot, chat_id)
       bot.api.send_message(
         chat_id: chat_id,
-        text: "Understand music links from Spotify or Deezer only."
+        text: "Understand music links from Spotify, Youtube Music, and Deezer only."
       )
     end
   end
