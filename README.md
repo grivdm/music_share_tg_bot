@@ -4,7 +4,6 @@ A simple Telegram bot for converting music links between streaming platforms (Sp
 
 [![CI](https://github.com/grivdm/music_share_tg_bot/actions/workflows/ci.yml/badge.svg)](https://github.com/grivdm/music_share_tg_bot/actions/workflows/ci.yml)
 [![Ruby Version](https://img.shields.io/badge/ruby-3.2-red.svg)](https://www.ruby-lang.org/)
-[![Repo Size](https://img.shields.io/github/repo-size/grivdm/music_share_tg_bot)](https://github.com/grivdm/music_share_tg_bot)
 
 ## Supported Platforms
 
