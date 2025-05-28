@@ -12,9 +12,10 @@ require_relative 'lib/services/music_link_processor'
 class Bot
   def initialize
     @token = Configuration.telegram_bot_token
+    @api_url = Configuration.api_url
     @logger = Configuration.logger
     @url_processor = Services::UrlProcessor.new
-    @api_client = Services::ApiClient.new(Configuration.api_url, @logger)
+    @api_client = Services::ApiClient.new(@api_url, @logger)
     @message_handler = Services::MessageHandler.new(@logger)
     @music_link_processor = Services::MusicLinkProcessor.new(@url_processor, @api_client, @logger)
   end
