@@ -2,9 +2,7 @@
 
 module Services
   class UrlProcessor
-
     def extract_url(text)
-
       patterns = [
         # Spotify URLs
         %r{(https?://)?open\.spotify\.com/track/[a-zA-Z0-9]+},
@@ -16,7 +14,7 @@ module Services
         %r{(https?://)?dzr\.page\.link/[a-zA-Z0-9]+},
 
         # YouTube Music URLs
-        %r{(https?://)?music\.youtube\.com/watch\?v=[a-zA-Z0-9]+},
+        %r{(https?://)?music\.youtube\.com/watch\?v=[a-zA-Z0-9]+}
       ]
 
       patterns.each do |pattern|
