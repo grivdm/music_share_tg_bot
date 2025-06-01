@@ -24,7 +24,6 @@
 /lib/bundler/man/
 .rvmrc
 .rbenv-version
-.ruby-version
 .ruby-gemset
 
 # Log files
