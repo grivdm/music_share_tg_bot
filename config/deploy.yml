@@ -1,25 +1,24 @@
-<% require 'dotenv'; Dotenv.load('.env') %>
-service: music_share_tg_bot
-image: grivdm/music_share_tg_bot
+# config/deploy.yml для Telegram Bot
+<% require "dotenv"; Dotenv.load(".env") %>
+service: music_share_bot
+image: <%= ENV.fetch("DOCKER_USERNAME") %>/music_share_bot
 
-# Серверы для деплоя
+primary_role: worker
+
 servers:
-  web:
+  worker:
     hosts:
       - <%= ENV['SERVER_IP'] %>
     proxy: false
-    options:
-      health-cmd: "date"
 
 registry:
   username: ${DOCKER_USERNAME}
   password: ${KAMAL_REGISTRY_PASSWORD}
 
 env:
-  secret:
-    - TELEGRAM_BOT_TOKEN
-    - MUSIC_SHARE_API_URL
   clear:
+    TELEGRAM_BOT_TOKEN: <%= ENV['TELEGRAM_BOT_TOKEN'] %>
+    MUSIC_SHARE_API_URL: <%= ENV['MUSIC_SHARE_API_URL'] %>
     RACK_ENV: production
 
 ssh:
@@ -29,15 +28,3 @@ ssh:
 builder:
   arch: amd64
 
-
-# Для мониторинга и логов
-# healthcheck:
-#   path: /health
-#   interval: 10s
-#   timeout: 5s
-#   retries: 3
-
-aliases:
-  logs: app logs -f
-  ps: app ps
-  status: app status
