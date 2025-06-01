@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Deploy with Kamal
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          KAMAL_REGISTRY_PASSWORD: ${{ secrets.KAMAL_REGISTRY_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          MUSIC_SHARE_API_URL: ${{ secrets.MUSIC_SHARE_API_URL }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+        run: bundle exec kamal deploy
+

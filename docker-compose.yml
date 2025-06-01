@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    restart: always
+    env_file: .env
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - MUSIC_SHARE_API_URL=${MUSIC_SHARE_API_URL}
+    volumes:
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "ps", "aux", "|", "grep", "[r]uby bot.rb"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
