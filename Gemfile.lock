@@ -158,7 +158,7 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     securerandom (0.4.1)
-    solargraph (0.55.1)
+    solargraph (0.55.4)
       backport (~> 1.2)
       benchmark (~> 0.4)
       bundler (~> 2.0)
