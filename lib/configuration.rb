@@ -17,6 +17,7 @@ class Configuration
     @logger ||= begin
       logger = Logger.new($stdout)
       logger.level = Logger::INFO
+      $stdout.sync = true
       logger
     end
   end
