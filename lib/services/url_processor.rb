@@ -11,6 +11,7 @@ module Services
         # Deezer URLs
         %r{(https?://)?deezer\.com/\w+/track/\d+},
         %r{(https?://)?deezer\.com/track/\d+},
+        %r{(https?://)?link\.deezer\.com/[a-zA-Z0-9]+},
         %r{(https?://)?dzr\.page\.link/[a-zA-Z0-9]+},
 
         # YouTube Music URLs

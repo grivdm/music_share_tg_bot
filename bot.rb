@@ -51,7 +51,7 @@ class Bot
       @message_handler.send_welcome_message(bot, chat_id)
     when %r{^/help$}
       @message_handler.send_help_message(bot, chat_id)
-    when %r{(https?://)?(open\.spotify\.com|spotify\.com|deezer\.com|dzr\.page\.link|music\.youtube\.com)/}
+    when %r{(https?://)?(open\.spotify\.com|spotify\.com|deezer\.com|link\.deezer\.com|dzr\.page\.link|music\.youtube\.com)/}
       @music_link_processor.process(bot, message)
     end
   end
